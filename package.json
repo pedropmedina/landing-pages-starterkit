@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",
+    "gulp-clean-css": "^4.2.0",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-hb": "^8.0.0",
     "gulp-postcss": "^8.0.0",

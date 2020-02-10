@@ -5,6 +5,8 @@ const replace = require('gulp-replace');
 var handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
+const cleanCss = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
 
 const hubspot_head = `
   <title>{{ content.html_title }}</title>\n
@@ -16,21 +18,6 @@ const hubspot_footer = '{{ standard_footer_includes }}';
 // html
 function html() {
   return src('./dev/*.html').pipe(gulpconnect.reload(() => {}));
-}
-
-// css for development
-function css() {
-  return src('./src/*.css')
-    .pipe(postcss({ mode: 'development' }))
-    .pipe(dest('./dev/'))
-    .pipe(gulpconnect.reload());
-}
-
-// css for production
-function purgeCss() {
-  return src('./src/*.css')
-    .pipe(postcss({ mode: 'production' }))
-    .pipe(dest('./dev/'));
 }
 
 // handlebars templating engine configurations
@@ -45,6 +32,36 @@ function hbs() {
     .pipe(rename({ extname: '.html' }))
     .pipe(dest('./dev/'))
     .pipe(gulpconnect.reload());
+}
+
+// css for development
+function css() {
+  return src('./src/*.css')
+    .pipe(postcss({ mode: 'development' }))
+    .pipe(dest('./dev/'))
+    .pipe(gulpconnect.reload());
+}
+
+// optimize css for production by purging unused css and minifying file
+function optimizeCss() {
+  return src('./src/*.css')
+    .pipe(postcss({ mode: 'production' }))
+    .pipe(cleanCss())
+    .pipe(dest('./dev/'));
+}
+
+// add js file to dev dir
+function js() {
+  return src('./src/*.js')
+    .pipe(dest('./dev/'))
+    .pipe(gulpconnect.reload());
+}
+
+// optimize js for production
+function optimizeJs() {
+  return src('./dec/*.js')
+    .pipe(uglify())
+    .pipe(dest('./dev/'));
 }
 
 // live server with hot reloading
@@ -91,6 +108,14 @@ function productionBuild() {
       })
     )
     .pipe(
+      inject(src(['./dev/index.js']), {
+        starttag: '<!-- inject:body:{{ext}} -->',
+        transform: (_, file) =>
+          `<script>\n ${file.contents.toString('utf8')}\n </script>`,
+        removeTags: true
+      })
+    )
+    .pipe(
       inject(src(['./dev/index.css']), {
         starttag: '<!-- inject:hubspot_footer -->',
         transform: () => hubspot_footer,
@@ -106,5 +131,5 @@ function productionBuild() {
     .pipe(dest('./dist/'));
 }
 
-exports.default = series(hbs, css, parallel(connect, watchFiles));
-exports.prod = series(purgeCss, productionBuild);
+exports.default = series(hbs, css, js, parallel(connect, watchFiles));
+exports.prod = series(optimizeCss, optimizeJs, productionBuild);
