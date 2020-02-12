@@ -1,5 +1,6 @@
-@tailwind base;
+@import 'tailwindcss/base';
 
-@tailwind components;
+@import 'tailwindcss/components';
+@import './styles/hbspt-form.css';
 
-@tailwind utilities;
+@import 'tailwindcss/utilities';

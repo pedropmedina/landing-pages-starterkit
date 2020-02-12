@@ -147,5 +147,8 @@ temp/
 # Ignore all local history of files
 .history
 
+## development and production files
+dev/
+dist/
+
 # End of https://www.gitignore.io/api/macOS,VisualStudioCode,node
-n

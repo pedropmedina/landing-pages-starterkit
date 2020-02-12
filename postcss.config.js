@@ -9,6 +9,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 
 module.exports = ({ options }) => ({
   plugins: [
+    require('postcss-import'),
     require('stylelint')('./stylelint.config.js'),
     require('tailwindcss')('./tailwind.config.js'),
     require('autoprefixer'),

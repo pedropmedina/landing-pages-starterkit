@@ -50,7 +50,7 @@ function optimizeCss() {
     .pipe(dest('./dev/'));
 }
 
-// add js file to dev dir
+// add js file to dev dir for development
 function js() {
   return src('./src/*.js')
     .pipe(dest('./dev/'))
@@ -69,7 +69,8 @@ function connect(done) {
   gulpconnect.server(
     {
       root: './dev/',
-      livereload: true
+      livereload: true,
+      port: 3000
     },
     function() {
       this.server.on('close', done);
@@ -88,6 +89,17 @@ function watchFiles(done) {
   done();
 }
 
+// Development/Default task outputs html,css,js
+// under dev dir and inject files to index.html
+function developmentBuild() {
+  const target = src('./dev/*.html');
+  const sources = src(['./dev/index.css', './dev/index.js'], { read: false });
+  return target
+    .pipe(inject(sources, { relative: true }))
+    .pipe(dest('./dev'))
+    .pipe(gulpconnect.reload());
+}
+
 // Production task. inlines source into html file
 // and replaces fields required by hubspot
 function productionBuild() {
@@ -101,7 +113,7 @@ function productionBuild() {
     )
     .pipe(
       inject(src(['./dev/index.css']), {
-        starttag: '<!-- inject:head:{{ext}} -->',
+        starttag: '<!-- inject:{{ext}} -->',
         transform: (_, file) =>
           `<style>\n ${file.contents.toString('utf8')}\n </style>`,
         removeTags: true
@@ -109,7 +121,7 @@ function productionBuild() {
     )
     .pipe(
       inject(src(['./dev/index.js']), {
-        starttag: '<!-- inject:body:{{ext}} -->',
+        starttag: '<!-- inject:{{ext}} -->',
         transform: (_, file) =>
           `<script>\n ${file.contents.toString('utf8')}\n </script>`,
         removeTags: true
@@ -131,5 +143,11 @@ function productionBuild() {
     .pipe(dest('./dist/'));
 }
 
-exports.default = series(hbs, css, js, parallel(connect, watchFiles));
+exports.default = series(
+  hbs,
+  css,
+  js,
+  developmentBuild,
+  parallel(connect, watchFiles)
+);
 exports.prod = series(optimizeCss, optimizeJs, productionBuild);
