@@ -15,5 +15,5 @@ Initial setup consists of gulp, handlebars, tailwindcss.
 
 ## Commands
 
-    $ yarn run start   # dev server
+    $ yarn run start   # dev server -> /dev
     $ yarn run prod    # prod built -> /dist
