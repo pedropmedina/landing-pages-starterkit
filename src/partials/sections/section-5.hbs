@@ -1,0 +1,20 @@
+<section class="container mx-auto mb-16 md:-mt-56">
+  <h3 class="mb-8 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-ricoma-xl">
+    {{{  section-5.heading  }}}
+  </h3>
+
+  <ul class="w-full mx-auto mb-6 md:w-10/12 md:grid grid-cols-2 col-gap-6">
+    {{#each section-5.list as | list |}}
+      <li class="flex items-center mb-4">
+        <div class="flex-shrink-0 mr-4">
+          <img src="{{list.image}}" alt="">
+        </div>
+        {{list.text}}
+      </li>
+    {{/each}}
+  </ul>
+
+  {{#> button classes="bg-gradient-orange sm:mx-auto"}}
+    {{#*inline "content"}}I WANT THE Ri 1000 PRINTER{{/inline}}
+  {{/button}}
+</section>

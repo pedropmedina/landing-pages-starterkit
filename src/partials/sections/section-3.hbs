@@ -1,0 +1,66 @@
+ <section class="container px-2 mx-auto mb-20 sm:px-4 md:px-12">
+   {{#with section-3}}
+     {{#with subsection-1}}
+       <div class="mb-10">
+         <div class="mb-10">
+           <h3 class="mb-2 mb-3 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-ricoma-xl">
+             {{heading}}
+           </h3>
+           <h4 class="mb-3 leading-relaxed tracking-normal text-center md:px-6 text-blue-dark text-ricoma-md">
+             {{{subheading}}}
+           </h4>
+           <div class="hidden md:block">
+             <img src="{{image-lg}}" alt=""/>
+           </div>
+           <div class="md:hidden">
+             <img src="{{image-sm}}" alt=""/>
+           </div>
+         </div>
+         <div class="md:grid grid-cols-3 col-gap-6">
+           <ul>
+             {{#each lists.list-1}}
+               <li class="flex items-center justify-center mb-3 md:justify-start"><i class="flex-shrink-0 inline-block w-2 h-2 mr-3 rounded-full bg-blue-dark"></i> {{this}}</li>
+             {{/each}}
+           </ul>
+
+           <ul>
+             {{#each lists.list-2}}
+               <li class="flex items-center justify-center mb-3 md:justify-start"><i class="flex-shrink-0 inline-block w-2 h-2 mr-3 rounded-full bg-blue-dark"></i> {{this}}</li>
+             {{/each}}
+           </ul>
+
+           <ul>
+             {{#each lists.list-3}}
+               <li class="flex items-center justify-center mb-3 md:justify-start"><i class="flex-shrink-0 inline-block w-2 h-2 mr-3 rounded-full bg-blue-dark"></i> {{this}}</li>
+             {{/each}}
+           </ul>
+         </div>
+       </div>
+     {{/with}}
+
+     {{#with subsection-2}}
+       <div>
+         <div class="mb-12 md:flex">
+           <div class="md:pr-8 md:w-4/6">
+             <h3 class="mb-2 mb-4 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-left md:text-ricoma-xl">
+               {{heading}}
+             </h3>
+             <div class="mb-6">
+               <img class="mx-auto md:mx-0" src="{{image-1}}" alt="" />
+             </div>
+             <div class="mb-6 md:hidden">
+               <img src="{{image-2}}" alt=""/>
+             </div>
+             <p class="mb-6 leading-relaxed">{{paragraph}}</p>
+           </div>
+           <div class="hidden w-2/4 md:block">
+             <img src="https://f.hubspotusercontent30.net/hubfs/3019581/ricoh-dgt-landing-page/Ricoma%20Academy.png" alt=""/>
+           </div>
+         </div>
+         {{#> button classes="bg-gradient-orange sm:mx-auto"}}
+           {{#*inline "content"}}I WANT TOP NOTCH TRAINING AND SERVICE{{/inline}}
+         {{/button}}
+       </div>
+     {{/with}}
+   {{/with}}
+ </section>

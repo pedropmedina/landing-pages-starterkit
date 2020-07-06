@@ -1,0 +1,54 @@
+<section class="container mx-auto">
+  {{#with section-1}}
+    {{#with subsection-1}}
+      <div class="mb-16 lg:grid grid-cols-2 col-gap-6">
+        <div class="hidden lg:block modal-show-video">
+          <img class="cursor-pointer" src="{{thumbnail}}" alt="" > 
+        </div>
+        <div class="items-center md:pl-6">
+          <h3 class="mb-2 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-left">
+            {{{heading}}}
+          </h3>
+          <h4 class="mb-3 leading-relaxed tracking-normal text-center text-ricoma-md md:text-ricoma-lg text-blue-dark md:text-left">
+            {{subheading}}
+          </h4>
+          <div class="block mb-6 lg:hidden modal-show-video">
+            <img class="cursor-pointer" src="{{thumbnail}}" alt="" > 
+          </div>
+            <p class="mb-5 leading-relaxed">{{paragraph}}</p>
+          <div class="w-9/12 mx-auto md:mx-0 md:w-1/2">
+            <img src="{{image}}" alt="" />
+          </div>
+        </div>
+      </div>
+    {{/with}}
+
+    <!-- -+-+-+- divider -+-+-+- -->
+    <div class="flex justify-center mb-16">
+      <img src="https://f.hubspotusercontent30.net/hubfs/3019581/dtp_heatpress_landing_page/divider.svg" alt="" > 
+    </div>
+
+    {{#with subsection-2}}
+      <div class="container items-center mx-auto mb-16 lg:grid grid-cols-2 col-gap-6">
+        <div class="sm:pr-6">
+          <h3 class="mb-3 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-left md:text-ricoma-xl">
+            {{{heading}}}
+          </h3>
+          <div class="block mb-4 lg:hidden">
+            <img src="{{image}}" alt="" > 
+          </div>
+          <p class="mb-6 leading-relaxed">
+            {{paragraph}}
+          </p>
+          {{#> button classes="bg-gradient-orange"}}
+            {{#*inline "content"}}I WANT TO GET STARTED!{{/inline}}
+          {{/button}}
+        </div>
+        <div class="hidden lg:block">
+          <img src="{{image}}" alt="" > 
+        </div>
+      </div>
+    {{/with}}
+  {{/with}}
+</section>
+

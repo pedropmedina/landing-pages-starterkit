@@ -1,0 +1,23 @@
+<section class="container relative mx-auto md:pt-24">
+    <!-- floating image -->
+    <img
+      class="absolute top-0 z-10 hidden w-6/12 -mt-24 md:block -ml-72 left-100"
+      src="{{section-9.image-floating}}"
+      alt="" 
+    > 
+
+    <div class="relative py-8">
+      <div class="px-3 py-16 md:px-8 bg-blue-darkest rounded-t-5xl rounded-br-5xl">
+        <h3 class="mb-8 font-extrabold leading-tight tracking-normal text-center text-white text-ricoma-lg/xl md:text-ricoma-xl">
+          {{section-9.heading}}
+        </h3>
+
+        {{>accordion }}
+
+        {{#> button classes="bg-gradient-orange sm:mx-auto"}}
+          {{#*inline "content"}}GET IN TOUCH{{/inline}}
+        {{/button}}
+      </div>
+    </div>
+</section>
+

@@ -1,0 +1,26 @@
+<section class="container py-16 mx-auto md:mb-20 md:px-16">
+  <h3 class="mb-8 font-bold leading-tight tracking-normal text-center text-ricoma-xl">
+    Machine Specs
+  </h3>
+
+  <table class="w-full mb-10 table-auto">
+    <thead>
+      <tr>
+        <th class="px-4 py-6">Feature</th>
+        <th class="px-4 py-6">Ricoh Ri 1000</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each section-10 as | td |}}
+        <tr>
+          <td class="px-4 py-6 font-semibold border text-blue-dark">{{{td.feature}}}</td>
+          <td class="px-4 py-6 text-center border text-ricoma-sm">{{{td.description}}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{#> button classes="bg-gradient-orange sm:mx-auto"}}
+    {{#*inline "content"}}GET IN TOUCH{{/inline}}
+  {{/button}}
+</section>

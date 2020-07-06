@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Permanent+Marker&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- inject:hubspot_head -->
   <!-- endinject -->
 
@@ -14,14 +16,52 @@
 </head>
 
 <body>
-  {{> hbspt-form}}
+    <!-- +++++++++++++++++++++++++++ content ++++++++++++++++++++++++++++ -->
+    {{> countdown }}
+    {{> layout }}
+
+    <!-- +++++++++++++++++++++++++++ modals ++++++++++++++++++++++++++++ -->
+    {{#> modal id="video" maxWidth="max-w-4xl"}}
+      {{#*inline "content"}}
+        <div style="position:relative;height:0;padding-bottom:56.25%">
+          <iframe 
+            id="video-iframe" 
+            class='sproutvideo-player' 
+            src='https://videos.sproutvideo.com/embed/d39cd8b51c1de7c25a/c054e4dafd03b021' 
+            style='position:absolute;width:100%;height:100%;left:0;top:0' 
+            frameborder='0' 
+            allowfullscreen>
+          </iframe>
+        </div>
+      {{/inline}}
+    {{/modal}}
+
+
+    {{#> modal id="form" }}
+      {{#*inline "content"}}
+        <div class="mb-3 bg-white rounded-lg">
+          <div class="py-6 mx-2 text-2xl font-extrabold leading-tight tracking-normal text-center">
+            Learn how you can make money with our <br /> Ri 1000 DTG Printer Ultimate Starter Kit
+          </div>
+          {{> hbspt-form}}
+        </div>
+        <div class="flex flex-wrap items-center justify-center sm:justify-between">
+          <div class="mb-2 text-xs text-center text-white">
+            By clicking above, you agree to the  <a href="https://ricoma.com/US/terms-of-service" target="_blank"><span class="underline">Terms of Service</span></a>
+          </div>
+          <img src="https://f.hubspotusercontent30.net/hubfs/3019581/dtp_heatpress_landing_page/100%25%20secure%20badge%20copy.svg" alt="">
+        </div>
+      {{/inline}}
+    {{/modal}}
+  </div>
 
   <!-- inject:hubspot_footer -->
   <!-- endinject -->
 
+  <script src="https://kit.fontawesome.com/d68461432d.js" crossorigin="anonymous" defer></script>
+  <script type="text/javascript" src="https://c.sproutvideo.com/player_api.js"></script>
   <!-- inject:js -->
   <!-- endinject -->
-  <script src="https://kit.fontawesome.com/d68461432d.js" crossorigin="anonymous" defer></script>
 </body>
 
-</html>
+</html>{b

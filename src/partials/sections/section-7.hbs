@@ -1,0 +1,16 @@
+<section class="px-4 py-16 mb-20 -mx-4 bg-gray-100 md:mx-auto md:max-w-screen-xl md:px-16">
+  {{#each section-7 as | cardObj |}}
+    <div class="items-center mb-16 md:mb-4 md:grid grid-cols-2 md:col-gap-12 lg:col-gap-40">
+      <div class="mb-8 md:hidden"><img src="{{cardObj.image}}" alt="" /></div>
+      {{#if (not (isEven @index))}}<div class="hidden mb-8 md:block"><img src="{{cardObj.image}}" alt="" /></div>{{/if}}
+      <div>
+        <h3 class="mb-4 font-extrabold leading-tight tracking-normal text-ricoma-lg/xl md:text-ricoma-xl">
+          {{cardObj.heading}}
+        </h3>
+        <p class="mb-4 tracking-wide">{{cardObj.paragraph}}</p>
+        <button class="flex items-center font-semibold leading-relaxed uppercase modal-show-form text-ricoma-sm text-blue-dark">Learn more <i class="ml-2 fas fa-arrow-right"></i></button>
+      </div>
+      {{#if (isEven @index)}}<div class="hidden mb-8 md:block"><img src="{{cardObj.image}}" alt="" /></div>{{/if}}
+    </div>
+  {{/each}}
+</section>

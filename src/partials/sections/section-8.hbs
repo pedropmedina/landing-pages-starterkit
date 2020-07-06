@@ -1,0 +1,53 @@
+<section class="container mx-auto">
+  {{#each section-8 as | card | }}
+    <div class="mb-10">
+      <h3 class="mb-8 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-ricoma-xl lg:hidden lg:text-left">
+        {{{ card.heading }}}
+      </h3>
+
+      <div class="md:grid grid-cols-7 col-gap-8">
+        {{#if (isEven @index)}}
+          <div class="col-span-3">
+            <img src="{{card.image}}" alt="">
+          </div>
+        {{/if}}
+        {{#if (not (isEven @index))}}
+          <div class="block md:hidden">
+            <img src="{{card.image}}" alt="">
+          </div>
+        {{/if}}
+
+        <div class="py-4 pt-0 text-left col-span-4">
+          <h3 class="hidden mb-8 font-extrabold leading-tight tracking-normal text-left text-ricoma-xl lg:block">
+            {{{ card.heading }}}
+          </h3>
+          <div class="mb-8">
+            {{#each card.paragraphs as | paragraph |}}
+              <p class="mb-6 leading-snug tracking-normal">
+                {{{paragraph}}}
+              </p>
+            {{/each}}
+          </div>
+          <button 
+            class="block w-full py-4 mx-auto font-bold text-white uppercase rounded-full sm:px-16 sm:w-auto bg-gradient-orange sm:mx-0 modal-show-form text-ricoma-sm hover:-translate-y-1 transform transition-all duration-200"
+          >
+            {{ card.button }}
+          </button>
+        </div>
+
+        {{#if (not (isEven @index))}}
+          <div class="hidden md:block md:col-span-3">
+            <img src="{{card.image}}" alt="">
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    {{#if (not (isLast @index 3))}}
+      <!-- -+-+-+- divider -+-+-+- -->
+      <div class="flex justify-center mb-16">
+        <img src="https://f.hubspotusercontent30.net/hubfs/3019581/dtp_heatpress_landing_page/divider.svg" alt="" > 
+      </div>
+    {{/if}}
+  {{/each}}
+</section>

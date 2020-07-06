@@ -1,0 +1,19 @@
+<section class="container mx-auto mb-16">
+  {{#with section-2}}
+    <div class="p-4 bg-center bg-cover rounded-lg sm:py-10 sm:px-16" style="background-image: url('https://f.hubspotusercontent30.net/hubfs/3019581/ricoh-dgt-landing-page/pattern.png');">
+      <div class="w-full h-full py-12 bg-white rounded-lg sm:py-16">
+        <div class="w-5/6 mx-auto md:w-4/6">
+          <h3 class="mb-2 mb-3 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-ricoma-xl">
+            {{heading}}
+          </h3>
+          <p class="mb-6 leading-relaxed text-center">
+            {{paragraph}}
+          </p>
+          {{#> button classes="bg-gradient-blue sm:mx-auto"}}
+            {{#*inline "content"}}I WANT TO GET STARTED!{{/inline}}
+          {{/button}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</section>

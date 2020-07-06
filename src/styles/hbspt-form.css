@@ -2,21 +2,21 @@
    ========================================================================== */
 
 /* Form Field (selector for form field wrapper) */
-.hs-form .hs-form-field {
-}
+/* .hs-form .hs-form-field {
+} */
 
 /* Descriptions (targets class applied to Help Text divs) */
-.hs-form .hs-field-desc {
-}
+/* .hs-form .hs-field-desc {
+} */
 
 /* Labels (selects field labels and error messages) */
-.hs-form label {
+/* .hs-form label {
 }
 .hs-form .hs-form-field > label {
-}
+} */
 
 /* Inputs (selectors for all inputs)  */
-.hs-form input[type='text'],
+/* .hs-form input[type='text'],
 .hs-form input[type='password'],
 .hs-form input[type='datetime'],
 .hs-form input[type='datetime-local'],
@@ -33,10 +33,10 @@
 .hs-form input[type='file'],
 .hs-form textarea,
 .hs-form select {
-}
+} */
 
 /* Inputs in focus (selectors for all inputs when clicked)  */
-.hs-form input[type='text']:focus,
+/* .hs-form input[type='text']:focus,
 .hs-form input[type='password']:focus,
 .hs-form input[type='datetime']:focus,
 .hs-form input[type='datetime-local']:focus,
@@ -53,22 +53,22 @@
 .hs-form input[type='file']:focus,
 .hs-form textarea:focus,
 .hs-form select:focus {
-}
+} */
 
 /* Multi-line inputs (selectors to target multi-line fields */
-.hs-form textarea {
+/* .hs-form textarea {
 }
 .hs-form textarea:focus {
-}
+} */
 
 /* Dropdowns (selectors for dropdowns) */
-.hs-form select {
+/* .hs-form select {
 }
 .hs-form select:focus {
-}
+} */
 
 /* Multi-select (selectors for multi-select fields) */
-.hs-form form.hs-form .hs-form-field ul.inputs-list {
+/* .hs-form form.hs-form .hs-form-field ul.inputs-list {
 }
 
 .hs-form form.hs-form .hs-form-field ul.inputs-list li input {
@@ -76,10 +76,10 @@
 .hs-form input[type='radio'] {
 }
 .hs-form input[type='checkbox'] {
-}
+} */
 
 /* Required (selectors for fields, when they do not pass validation) */
-.hs-form input:focus:required:invalid,
+/* .hs-form input:focus:required:invalid,
 .hs-form textarea:focus:required:invalid,
 .hs-form select:focus:required:invalid {
 }
@@ -87,30 +87,26 @@
 .hs-form input:focus:required:invalid:focus,
 .hs-form textarea:focus:required:invalid:focus,
 .hs-form select:focus:required:invalid:focus {
-}
+} */
 
 /* Error message (selector for validation messages) */
-.hs-form .hs-error-msgs label {
-}
+/* .hs-form .hs-error-msgs label {
+} */
 
 /* Placeholder Text (styles the placeholder attribute text) */
-::-webkit-input-placeholder {
-  /* Webkit Browsers */
+/* ::-webkit-input-placeholder {
 }
 :-moz-placeholder {
-  /* Firefox 18- */
 }
 ::-moz-placeholder {
-  /* Firefox 19+ */
 }
 :-ms-input-placeholder {
-  /* IE10 */
-}
+} */
 
 /* Multi Column Form (selectors for fieldsets and field wrappers) 
    ========================================================================== */
 
-.hs-form .hs-form fieldset.form-columns-1 {
+/* .hs-form .hs-form fieldset.form-columns-1 {
 }
 .hs-form .hs-form fieldset.form-columns-1 .hs-form-field {
 }
@@ -123,12 +119,12 @@
 .hs-form .hs-form fieldset.form-columns-3 {
 }
 .hs-form .hs-form fieldset.form-columns-3 .hs-form-field {
-}
+} */
 
 /* Submit buttons (selectors for all non-CTA buttons) 
    ========================================================================== */
 
-body .hs-button.primary,
+/* body .hs-button.primary,
 body input[type='submit'],
 body input[type='button'] {
 }
@@ -141,4 +137,123 @@ body input[type='button']:hover {
 body .hs-button.primary:focus,
 body input[type='submit']:focus,
 body input[type='button']:focus {
+} */
+
+.hs-form .hs-form fieldset.form-columns-2 {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
+
+fieldset.form-columns-2 .hs-form-field {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.hs-form fieldset {
+  border-width: 2px;
+  border-color: #4299e1;
+  width: 100%;
+  max-width: 100% !important;
+}
+
+.hs-form .hs-form-field {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.hs-form .hs-form-field .input {
+  width: 100%;
+}
+
+.hs-form .hs-form-field > label {
+  position: absolute;
+  font-size: 0.75rem;
+  background-color: #fff;
+  left: 2rem;
+  top: -0.5rem;
+}
+
+.hs-form .hs-error-msgs label {
+  color: #d24a3b;
+}
+
+.hs-form input[type='color'],
+.hs-form input[type='date'],
+.hs-form input[type='datetime-local'],
+.hs-form input[type='datetime'],
+.hs-form input[type='email'],
+.hs-form input[type='file'],
+.hs-form input[type='month'],
+.hs-form input[type='number'],
+.hs-form input[type='password'],
+.hs-form input[type='search'],
+.hs-form input[type='tel'],
+.hs-form input[type='text'],
+.hs-form input[type='time'],
+.hs-form input[type='url'],
+.hs-form input[type='week'],
+.hs-form select,
+.hs-form textarea {
+  border-width: 1px;
+  border-color: #1a202c;
+  border-radius: 0.375rem;
+  display: inline-block;
+  padding-left: 1rem;
+  height: 4rem;
+  background-color: #fff;
+  font-size: 1rem;
+  width: 100% !important;
+}
+
+.hs-form input[type='submit'] {
+  display: inline-block;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.875rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: 700;
+  width: 100%;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff7200 0%, #fc9500 100%);
+  @apply rounded-b-lg uppercase tracking-wide !important;
+}
+
+.hs-form input[type='submit']:hover {
+  background: linear-gradient(90deg, #ff7200 0%, #fc9500 100%);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transform-translate-y: -0.25rem;
+}
+
+.hs-form input::-webkit-input-placeholder,
+.hs-form textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+.hs-form input::-moz-placeholder,
+.hs-form textarea::-moz-placeholder {
+  font-style: italic;
+}
+
+.hs-form input:-ms-input-placeholder,
+.hs-form textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.hs-form input::-ms-input-placeholder,
+.hs-form textarea::-ms-input-placeholder {
+  font-style: italic;
+}
+
+.hs-form input::placeholder,
+.hs-form select,
+.hs-form textarea::placeholder {
+  font-style: italic;
+}
+

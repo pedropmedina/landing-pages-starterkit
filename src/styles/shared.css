@@ -1,0 +1,53 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  @apply h-full;
+}
+
+body {
+  @apply w-full text-ricoma-base;
+}
+
+.bg-stroke {
+  @apply px-2;
+}
+
+.bg-stroke::before {
+  content: ' ';
+  z-index: -1;
+  height: 60%;
+  @apply absolute bg-blue-light top-0 left-0 w-full inline-block mt-2 transform translate-y-1/2;
+}
+
+.bg-gradient-orange {
+  background-image: linear-gradient(
+    to right,
+    theme('colors.orange.dark'),
+    theme('colors.orange.light')
+  );
+}
+
+.bg-gradient-blue {
+  background-image: linear-gradient(
+    to right,
+    theme('colors.blue.darker'),
+    theme('colors.blue.dark')
+  );
+}
+
+.animation-scaling {
+  animation-duration: 0.5s;
+  animation-name: scaling;
+  animation-iteration-count: 1;
+}
+
+@keyframes scaling {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

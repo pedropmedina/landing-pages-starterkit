@@ -1,0 +1,19 @@
+<div
+  id="modal-{{id}}"
+  class="fixed top-0 left-0 z-50 hidden w-full h-full opacity-100"
+>
+  <div
+    class="flex items-center justify-center w-full h-full my-auto overflow-y-auto"
+    style="background-color: rgba(0, 0, 0, 0.7);"
+  >
+    <div 
+      class="absolute top-0 right-0 z-50 flex items-center justify-center w-12 h-12 mt-2 mr-2 sm:mt-8 sm:mr-8 text-2xl text-white rounded-full cursor-pointer modal-close-{{id}}" style="background-color: rgba(0, 0, 0, 0.7);"
+    >
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="w-full max-w-2xl m-auto py-16 px-2 animation-scaling {{maxWidth}}">
+      {{> content}}
+    </div>
+  </div>
+</div>
+

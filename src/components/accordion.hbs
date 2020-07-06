@@ -1,0 +1,16 @@
+<div class="mx-auto mb-16 text-white lg:w-7/12">
+  {{#each accordion as | accordionObj | }} 
+    <div class="flex items-center my-1 border-b-2 border-white cursor-pointer accordion-wrapper">
+      <div id="symbol-{{@index}}" class="self-start px-4 py-6 text-ricoma-lg" >
+        <i class="fas fa-plus-circle"></i>
+      </div>
+      <div class="p-2 text-ricoma-md md:pl-4 lg:pl-2" id="question-{{@index}}">
+        {{accordionObj.question}}
+      </div>
+    </div>
+    <div id="answer-{{@index}}" class="hidden p-8 leading-loose tracking-normal border-b-2 border-white" >
+      {{accordionObj.answer}}
+    </div>
+  {{/each}}
+</div>
+

@@ -1,0 +1,72 @@
+<div class="mb-16 -mx-4 md:mx-auto max-w-screen-xl">
+  {{#with hero}}
+    <div 
+      class="items-center w-full px-4 py-8 bg-center bg-cover md:px-8 lg:rounded-t-lg lg:grid grid-cols-2 col-gap-6"
+      style="background-image: url('{{image-bg}}');"
+    >
+      <div>
+        <h2 
+          class="mb-8 font-extrabold leading-tight tracking-normal text-center text-white text-ricoma-lg/xl lg:text-ricoma-2xl lg:text-left"
+        >
+          {{heading}}
+        </h2>
+        <div class="block mb-6 lg:hidden">
+          <img src="{{image}}" alt="">
+        </div>
+
+        {{#each subheadings as | subheading |}}
+          {{#if (isFirst @index)}}
+            <div class="mb-4 text-center md:text-left">
+              <span class="relative z-10 hidden w-auto font-bold tracking-normal text-center text-white sm:inline-block text-ricoma-lg bg-stroke lg:text-left">
+                <i class="mr-2 text-lg not-italic">&#x25b6;</i>
+                {{subheading}}
+              </span>
+              <!-- break into two lines on sm screens -->
+              <div class="block mb-4 sm:hidden">
+                <span class="relative z-10 w-auto font-bold tracking-normal text-center text-white text-ricoma-lg bg-stroke lg:text-left">
+                  <i class="mr-2 text-lg not-italic">&#x25b6;</i>
+                  Payments as low as 
+                </span>
+                </br>
+                <span class="relative z-10 w-auto font-bold tracking-normal text-center text-white text-ricoma-lg bg-stroke lg:text-left">
+                  $249 /month 
+                </span>
+              </div>
+            </div>
+          {{else}}
+            <div class="mb-2 text-center md:text-left">
+              <span class="relative z-10 w-auto font-bold tracking-normal text-center text-white text-ricoma-lg bg-stroke lg:text-left">
+                <i class="mr-2 text-lg not-italic">&#x25B6;</i>
+                {{subheading}}
+              </span>
+            </div>
+          {{/if}}
+        {{/each}}
+
+        <div class="mt-8 mb-8 text-white">
+          {{#each paragraphs as | paragraph |}}
+            <p class="mb-6 leading-relaxed tracking-normal">
+              {{{paragraph}}}
+            </p>
+          {{/each}}
+        </div>
+
+        {{#> button classes="bg-white text-gray-900"}}
+          {{#*inline "content"}}LEARN MORE{{/inline}}
+        {{/button}}
+      </div>
+      <div class="hidden lg:block">
+        <img src="{{image}}" alt="">
+      </div>
+    </div>
+    <ul 
+      class="flex flex-wrap justify-center py-4 font-bold tracking-wide text-white uppercase md:rounded-b-lg text-ricoma-sm bg-blue-light"
+    >
+      {{#each list}}
+        <li>
+          {{this}} {{#if (not (isLast @index 4))}}<i class="px-3 not-italic">•</i> {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/with}}
+</div>

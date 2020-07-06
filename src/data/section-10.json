@@ -1,0 +1,90 @@
+[
+  {
+    "feature": "Printable Area",
+    "description": "Up to 16\" x 19.6\" / 40.6 cm x 49.8 cm"
+  },
+  {
+    "feature": "Print Head Technology",
+    "description": "Ricoh piezo-electric drop-on-demand inkjet"
+  },
+  {
+    "feature": "Ink Chambers/Nozzles per Chamber",
+    "description": "4 Ricoh print heads 8 </br> channels/192 nozzles per channel"
+  },
+  {
+    "feature": "Typical Print Speeds </br> (10\" x 8\" graphic, light garment)",
+    "description": "Speed: 28 seconds </br>Fine: 42 seconds"
+  },
+  {
+    "feature": "Resolution Settings",
+    "description": "Speed: 600x600 dpi/4 pass</br> Fine: 600x600 dpi/8 pass</br> Superfine: 1200x1200 dpi/16 pass</br>"
+  },
+  {
+    "feature": "Ink",
+    "description": "Genuine Ricoh-approved direct to garment </br> water-based pigmented CMYK and white inks"
+  },
+  {
+    "feature": "Ink Delivery System",
+    "description": "Advanced closed-loop delivery system; Auto </br> ink circulation system for white channels"
+  },
+  {
+    "feature": "Printable Substrates",
+    "description": "100% cotton and high-cotton blends; 100% light poly, up to 50/50 dark poly, wood and canvas. Hats, shoes and other extended media options coming soon"
+  },
+  {
+    "feature": "Table Height Adjustment",
+    "description": "Precision manual table height adjustment up to 1.2\"/3.0 cm"
+  },
+  {
+    "feature": "Maintenance Features",
+    "description": "Precise ink monitoring, auto ink maintenance system, automated print head cleaning, power purge system to help fill and remove ink from system"
+  },
+  {
+    "feature": "Operating Environment",
+    "description": "59F/15C to 90F/32C, Humidity 45-80% RH, non-condensing humidifier recommended"
+  },
+  {
+    "feature": "Connectivity",
+    "description": "Supports USB drive and Ethernet"
+  },
+  {
+    "feature": "Electrical Requirements",
+    "description": "100/120VAC 50-60Hz, 0.65A max, 70 watts"
+  },
+  {
+    "feature": "Dimensions",
+    "description": "18.9\"H x 52.2\"L x 33.9\"W"
+  },
+  {
+    "feature": "Weight",
+    "description": "242.5 lbs (110 kg)"
+  },
+  {
+    "feature": "Curing Temperatures and Times - Heat Press (conveyor times vary)",
+    "description": "Light shirt (CMYK only): 356F/180C, 40 seconds Dark shirt (white ink): 330F/165C, 90 seconds"
+  },
+  {
+    "feature": "Pretreatment",
+    "description": "Genuine Ricoh-approved pretreatment formulas. Use included HVLP Wagner power sprayer or automatic sprayer in a separate room from your printer."
+  },
+  {
+    "feature": "Standard Table",
+    "description": "Medium (Included) 12.6\" x 18\" / 32 x 45.7 cm"
+  },
+  {
+    "feature": "Optional Platens",
+    "description": "Large </br> 16\" x 19.6\" / 40.6 x 49.8 cm </br> Small</br> 10.5\" x 13\" / 26.6 x 33 cm </br> More options available soon."
+  },
+  {
+    "feature": "Required Operating System",
+    "description": "Windows 7/8/10, 32-bit or 64-bit"
+  },
+  {
+    "feature": "Recommended Graphics Application",
+    "description": "Adobe Photoshop, Adobe Illustrator and CorelDRAW"
+  },
+  {
+    "feature": "Supported File Types",
+    "description": "TIFF, PNG, JPG, PDF, BMP"
+  }
+]

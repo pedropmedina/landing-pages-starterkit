@@ -1,0 +1,26 @@
+<section class="container relative mx-auto mb-16 md:pb-64" style="z-index: -50;">
+  {{#with section-4}}
+    <!-- floating image -->
+    <img class="absolute top-0 left-0 hidden w-6/12 mt-20 -ml-16 md:block transform -translate-x-1/2"  src="{{image-floating}}" alt="" style="z-index: 0"> 
+
+    <div class="p-4 bg-center bg-cover rounded-lg md:py-10 md:px-16" style="background-image: url('{{image-bg}}');">
+      <div class="w-full h-full py-10 bg-white rounded-lg">
+        <div class="w-5/6 mx-auto sm:w-4/6">
+          <h3 class="mb-2 mb-3 font-extrabold leading-tight tracking-normal text-center text-ricoma-lg/xl md:text-ricoma-xl">
+            {{heading}}
+          </h3>
+          <div class="w-11/12 mx-auto">
+            {{#each paragraphs}}
+              <p class="mb-6 leading-relaxed text-center">
+                {{this}}
+              </p>
+            {{/each}}
+          </div>
+          {{#> button classes="bg-gradient-blue sm:mx-auto"}}
+            {{#*inline "content"}}I WANT 0% FINANCING{{/inline}}
+          {{/button}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</section>

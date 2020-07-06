@@ -1,0 +1,39 @@
+<section class="mx-auto mb-16 -mx-8 md:relative md:max-w-screen-xl md:mx-auto md:pt-20 md:-mt-24" style="z-index: -10;">
+  {{#with section-6}}
+    <!-- floating image -->
+    <img
+      class="absolute top-0 right-0 z-10 hidden w-3/12 -mr-32 md:block"
+      src="{{image-floating}}"
+      alt=""
+    > 
+
+    <div class="relative p-4 md:py-8 md:px-16">
+      <img 
+        class="absolute top-0 left-0 h-20 -mt-8 md:translate-x-1/2 md:ml-40 md:mt-0 ml-1/2 transform -translate-x-1/2"
+        src="{{svg-1}}"
+        alt=""
+      > 
+      <img 
+        class="absolute bottom-0 left-0 h-20 -mb-8 md:-translate-x-1/2 md:right-0 md:left-auto md:mr-40 md:mb-0 ml-1/2 transform -translate-x-1/2"
+        src="{{svg-2}}"
+        alt=""
+      > 
+
+      <div class="py-16 md:rounded-tl-5xl md:rounded-br-5xl bg-blue-dark">
+        <h3
+          class="px-8 mb-10 font-extrabold leading-tight tracking-normal text-center text-white text-ricoma-lg/xl md:text-ricoma-xl"
+        >
+          {{{heading}}}
+        </h3>
+        <div class="w-full mb-4 overflow-x-scroll">
+          <div style="min-width: 900px;" class="px-4 mx-auto md:w-10/12">
+            <img class="w-full mx-auto mb-12" src="{{image-reviews}}" alt="">
+          </div>
+        </div>
+        {{#> button classes="bg-blue-light sm:mx-auto"}}
+          {{#*inline "content"}}LEARN MORE ABOUT THE R550 PRINTER{{/inline}}
+        {{/button}}
+      </div>
+    </div>
+  {{/with}}
+</section>
