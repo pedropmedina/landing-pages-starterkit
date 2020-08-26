@@ -24,6 +24,20 @@
     {{#> modal id="video" maxWidth="max-w-4xl"}}
       {{#*inline "content"}}
         <div style="position:relative;height:0;padding-bottom:56.25%">
+          <!-- inital loading indicator shows on opening modal to hide away flickering that takes place with the iframe -->
+          <div 
+            id="video-loader"
+            class="absolute top-0 bottom-0 left-0 right-0 z-10 w-full h-full">
+            <img 
+              class="w-full h-full bg-center bg-cover"
+              src="https://f.hubspotusercontent30.net/hubfs/3019581/r550-labor-day-landing-page/Screen%20Shot%202020-08-26%20at%204.09.43%20PM.png" 
+              alt=""
+            >
+            <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full">
+              {{> loader}}
+            </div>
+          </div> 
+
           <iframe 
             id="video-iframe" 
             class='sproutvideo-player' 

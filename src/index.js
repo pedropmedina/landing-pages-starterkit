@@ -42,7 +42,21 @@
   // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   const showModal = (id, player) => {
     return () => {
-      if (id === '#modal-video') player.play(); // start video on opening modal
+      if (id === '#modal-video') {
+        const iframe = document.querySelector('#video-iframe');
+        iframe.setAttribute(
+          'src',
+          'https://videos.sproutvideo.com/embed/d39cd8b51c1de7c25a/c054e4dafd03b021'
+        );
+
+        setTimeout(() => {
+          // remove loader after .8s and play video in order to account for flickering when setAttribute 'src'
+          const loader = document.querySelector('#video-loader');
+          loader.classList.add('hidden');
+
+          player.play(); // start video on opening modal
+        }, 800);
+      }
 
       document.querySelector(id).classList.remove('hidden');
       const scrollY = document.documentElement.style.getPropertyValue(
@@ -56,7 +70,14 @@
 
   const closeModal = (id, player) => {
     return () => {
-      if (id === '#modal-video') player.pause(); // start video on opening modal
+      if (id === '#modal-video') {
+        player.pause(); // start video on opening modal
+
+        // set loader to block upon closing the modal
+        const loader = document.querySelector('#video-loader');
+        loader.classList.remove('hidden');
+        loader.classList.add('block');
+      }
 
       const body = document.body;
       const scrollY = body.style.top;
